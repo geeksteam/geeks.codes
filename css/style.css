@@ -1,0 +1,1221 @@
+/*---------------------------------------
+=========================================
+Shadow City - Responsive Coming Soon Page
+Version: 1.0 (Initial Release)
+Designed By: Dimsong
+=========================================
+
+1. IMPORT CSS
+    1.1 Google fonts
+
+2. GLOBAL STYLES
+    2.1 Basic values
+    2.2 Basic text colors
+    2.3 Typography
+
+3. COMPONENTS
+    3.1 Title of sections
+    3.2 Service
+    3.3 Countdown timer
+    3.4 "Contact Us" form
+    3.5 Parallax background
+    3.6 Social links
+    3.7 Max logotype size
+    3.8 Team Member
+    3.9 Scroll button
+    3.10 Video background controls
+    3.11 MailChimp form
+
+4. SECTIONS
+    4.1 Preloader
+    4.2 Header
+    4.3 Services
+    4.4 Our Team
+    4.5 Contact Us
+    4.6 Footer
+    4.7 MailChimp
+
+5. COLOR STYLES
+    5.1 Pink
+    5.2 Green
+    5.3 Yellow
+    5.4 Blue
+    5.5 Violet
+    5.6 Red
+
+---------------------------------------*/
+
+/*---------------------------------------
+=========================================
+   1. IMPORT CSS    
+=========================================           
+-----------------------------------------*/
+
+/*---------------------------------------
+    1.1 Google fonts
+---------------------------------------*/
+/* Open Sans */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,400);
+/* Roboto Slab */
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+
+/*---------------------------------------
+=========================================
+   2. GLOBAL STYLE             
+=========================================
+-----------------------------------------*/
+
+/*---------------------------------------
+    2.1 Basic values
+---------------------------------------*/
+* {
+    padding: 0px;
+    margin: 0px;  
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto Slab', serif !important;
+}
+a{
+    text-decoration: none !important;
+}
+.section{
+    padding: 0px 0px;
+    text-align: center;
+    color: white;
+}
+.hidden-preloader{
+    opacity: 0;
+    z-index: -100;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    transition-duration: 1s;
+    visibility: hidden;
+}
+.hidden-control{
+    opacity: 0;
+}
+.visible-preloader{
+    opacity: 1;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    transition-duration: 1s;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track { 
+    background: #000000; 
+}
+::-webkit-scrollbar-thumb { 
+    background: #555555;
+}
+
+/*---------------------------------------
+    2.2 Basic text colors
+---------------------------------------*/
+
+.white{
+    color: white;
+}
+.black{
+    color: #2e2e2e;
+}
+
+/*---------------------------------------
+    2.3 Typography
+---------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Roboto Slab', serif !important;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+h1 {
+	font-size: 2.813rem;
+	line-height: 3.75rem;
+	font-weight: 500;
+}
+h2 {
+	font-size: 22px;
+	line-height: 3.125rem;
+	font-weight: 500;
+}
+h3 {
+	font-size: 1.5rem;
+	line-height: 2.375rem;
+	font-weight: 600;
+}
+h4 {
+	font-size: 1.25rem;
+	line-height: 2rem;
+	font-weight: 600;
+}
+h5 {
+	font-size: 18px;
+	line-height: 28px;
+	font-weight: 700;
+}
+h6 {
+	font-size: 16px;
+	line-height: 25px;
+	font-weight: 700;
+}
+
+/*---------------------------------------
+=========================================
+   3. COMPONENTS             
+=========================================
+-----------------------------------------*/
+
+/*---------------------------------------
+   3.1 Title of sections
+---------------------------------------*/
+.section-header {
+    margin-top: 45px;
+    margin-bottom: 40px;
+}
+.section-header .section-header-text{
+    font-size: 27px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Open Sans';
+}
+.section-header .section-header-underline{
+    width: 50px;
+    margin: auto;
+    margin-top: 20px;
+}
+.section-header .section-header-describe{
+    font-family: 'Open Sans';
+    font-size: 13px;
+    margin-top: 20px;
+}
+/*---------------------------------------
+   3.2 Service
+---------------------------------------*/
+.service{
+    padding: 2px !important;    
+    opacity: 0;
+}
+.service .service-inner {
+    cursor: default;
+    padding: 0px;
+    padding: 20px 10px;
+    padding-top: 10px;
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.service .service-icon{
+    width: 80px;
+    height: 80px;
+    line-height: 95px;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.service .service-icon i{
+    color: white;
+    font-size: 35px;
+}
+.service .service-title h4{
+    margin-top: 15px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    color: #3c3c3c;
+    border-bottom: solid 1px #f2f2f2;
+}
+.service .service-text p{
+    font-size: 13px;
+    text-align: center;
+    color: #686868;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*---------------------------------------
+   3.3 Countdown timer
+---------------------------------------*/
+#clock{
+    text-align: center;
+    display: inline-block;
+}
+#clock .clock-presenter{
+    width: 200px;
+    height: 140px;
+    line-height: 30px;
+    padding: 0px 30px;
+    text-align: center;
+}
+#clock .clock-presenter .digit{
+    margin-top: 20px;
+    font-size: 75px;
+    line-height: 60px;
+    height: 60px;
+    width: 40px;
+    font-weight: 300;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    cursor: default;
+}
+#clock .clock-presenter .note {
+    position: relative;
+    bottom: 0px;
+    padding-top: 5px;
+    cursor: default;
+    font-weight: 400;
+    font-size: 16px;
+    opacity: 0.7;
+}
+#clock .days_dash,
+#clock .hours_dash,
+#clock .minutes_dash{
+    border-right: solid 1px white;
+}
+@media (max-width: 992px) {
+    #clock .clock-presenter{
+        width:  180px;
+    }
+    #clock .clock-presenter .digit{
+        font-size: 55px;
+        width: 30px;
+    }
+}
+@media (max-width: 767px) {
+    #clock .clock-presenter {
+        width: 50%;
+        float: left;
+    }
+
+        #clock .clock-presenter .digit {
+            font-size: 75px;
+            width: 40px;
+        }
+
+    #clock .hours_dash {
+        border-right: none;
+    }
+}
+/*---------------------------------------
+   3.4 "Contact Us" form
+---------------------------------------*/
+#contact .d-form-control{
+    font-size: 14px;
+    line-height: 15px;
+    border: solid 1px #dcdcdc;
+    margin-bottom: 3px;
+    padding: 0px 10px;
+    color: #555;
+    outline: none;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}
+#contact .input-box{
+    height: 40px;
+    width: 100%;
+}
+#contact .textarea-box{
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+}
+#contact .send-btn{
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    border: solid 1px #f2f2f2;
+    background-color: #fafafa;
+    padding: 10px 20px;
+}
+
+
+/*---------------------------------------
+   3.5 Parallax background
+---------------------------------------*/
+.parallax-bg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+/*---------------------------------------
+   3.6 Social links
+---------------------------------------*/
+.social-links{
+    list-style: none;
+    text-align: right;
+}
+.social-links li{
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+}
+.social-links li a{
+    color: white;
+    text-decoration: none !important;
+}
+.social-links li a i{
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+}
+.light-header .social-links li a i{
+    background-color: transparent !important;
+    text-shadow: none !important;
+}
+@media (max-width: 767px) {
+    .social-links{
+        padding-top: 10px;
+    }
+}
+/*---------------------------------------
+   3.7 Max logotype size
+---------------------------------------*/
+.logo-size {
+    text-align: left;
+    padding: 0px;
+}
+.logo-size > img{
+    max-height: 90px;
+}
+#footer-content .logo-size > img{
+    max-height: 60px;
+}
+/*---------------------------------------
+   3.8 Team Member
+---------------------------------------*/
+
+.team-member{
+    padding: 10px;
+}
+.team-member .inner{
+    padding: 10px 10px 0px 10px;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.team-member .team-image{
+    position: relative;
+    width: 170px;
+    height: 170px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+.team-member .team-image img{
+    position: relative;
+}
+.team-member .team-description{
+    margin-top: 15px;
+}
+.team-member .team-description .fio{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.team-member .team-description .job{
+}
+.team-member .team-description .team-describe{
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 300;
+}
+.team-member .team-description hr{
+    margin: auto;
+    border: none;
+    border-top: solid 1px rgba(255, 255, 255, 0.30);
+    width: 40px;
+}
+.team-member .social-links{
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*---------------------------------------
+   3.9 Scroll Button
+---------------------------------------*/
+.scroll-content{
+    text-align: center;
+    padding-top: 30px;
+}
+.scroll{
+    display: inline-block;
+    color: white;
+    border: solid 1px white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    opacity: 0.6;
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.scroll:hover{
+    opacity: 1;
+}
+#footer-content .scroll{
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    border: solid 1px #2e2e2e;
+    background-color: #2e2e2e;
+    opacity: 1;
+}
+/*---------------------------------------
+   3.10 Video background controls
+---------------------------------------*/
+.video-controls{
+    list-style: none;
+    text-align: right;
+}
+.video-controls li{
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+}
+.video-controls a{
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    color: white !important;
+}
+.light-header .video-controls li a{
+    background-color: transparent !important;
+    text-shadow: none !important;
+}
+
+/*---------------------------------------
+   3.11 MailChimp Form
+---------------------------------------*/
+.no-pad{
+    padding: 0px !important;
+}
+.mc-form{
+    max-width: 400px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.mc-form .mc-email,
+.mc-form .mc-subscribe{
+    width: 100%;
+    height: 50px;
+    box-shadow: none;
+    outline: none; 
+    letter-spacing: 1px;
+    font-family: 'Open Sans'; 
+}
+.mc-email{
+    border: solid 1px #dcdcdc;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 70px;
+}
+.mc-form .sub-ico{
+    position: absolute;
+    top: 9px;
+    left: 1px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.7);
+    border-right: solid 1px #dcdcdc;
+    padding: 5px 20px;
+}
+.mc-form .mc-subscribe{
+    background-color: #fff;
+    border: none;
+    transition: all 0.4s;
+    color: #fff;
+}
+.mc-form .mess-style{
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    line-height: 12px;
+}
+.mc-form .mess-style a{
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .mc-form .mc-subscribe{
+        border-top: none;
+        border-left: solid 1px rgba(0, 0, 0, 0.7);
+    }
+}
+
+/*---------------------------------------
+=========================================
+   4. SECTIONS    
+=========================================           
+-----------------------------------------*/
+/*---------------------------------------
+   4.1 Preloader
+---------------------------------------*/
+#preloader{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #3e3e3e;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    text-align: center;
+}
+#preloader .preloader-img{
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+}
+/*---------------------------------------
+   4.2 Header
+---------------------------------------*/
+#countdown-content {
+    min-height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    background-color: rgba(44,38,66,1);
+}
+#countdown-content .countdown-background {
+    height: 100% !important;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#countdown-content .backstretch{
+    height: 100% !important;
+}
+#countdown-content .backstretch:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url('../img/pattern.png');
+    background-repeat: repeat;
+    background-color: rgba(44,38,66,1);
+    opacity: 0.8;
+    z-index: 100;
+}
+#countdown-content .vegas-container:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(44,38,66,1);
+    opacity: 0.8;
+}
+#countdown-content .mbYTP_wrapper::after{
+    background-image: url('../img/pattern.png');
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-repeat: repeat;
+    background-color: rgba(44,38,66,1);
+    opacity: 0.8;
+    z-index: 100;
+}
+#countdown-content .countdown-header {
+    padding-top: 65px;
+    padding-bottom: 35px;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+    min-height: 100%;
+}
+#countdown-content .countdown-header .comming-soon{
+    text-transform: uppercase;
+    font-size: 48px;
+    font-weight: 700;
+}
+#countdown-content .countdown-header .comming-soon-description{
+    padding: 20px 0px 50px 0px;
+}
+@media (max-width: 767px) {
+    #countdown-content *{
+        text-align: center !important;
+    }
+}
+/*---------------------------------------
+   4.3 Services
+---------------------------------------*/
+#services-content{
+    background-color: #eaeaea;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+#services-content .services-container{
+    margin-left: -2px;
+    margin-right: -2px;
+}
+/*---------------------------------------
+   4.4 Our Team
+---------------------------------------*/
+#team-content{
+    overflow: hidden;
+}
+#team-content .color-overlay{
+    background-color: rgba(44,38,66,0.8);
+}
+#team-content .padding-presenter{
+    padding-bottom: 45px;
+}
+#team-content .section-header{
+    border: none;
+    background-color: transparent;
+}
+#team-content .section-header .section-header-underline{
+    border-color: white;
+}
+#team-content .owl-page span{
+    background-color: white;
+    height: 3px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}
+/*---------------------------------------
+   4.5 Contact Us
+---------------------------------------*/
+#contact-us-content{
+    background-color: white;
+    overflow: hidden;
+}
+/*---------------------------------------
+   4.6 Footer
+---------------------------------------*/
+#footer-content{
+    background-color: #f2f2f2;
+    overflow: hidden;
+    border-bottom: solid 8px #2e2e2e;
+}
+#footer-content .contact-row{
+    padding-bottom: 40px;
+}
+#footer-content .contact-row .contact{
+    opacity: 0;
+}
+#footer-content .copyright{
+    font-size: 12px;
+}
+#footer-content .padding-presenter{
+    padding: 30px 0px 0px 0px;
+}
+@media (max-width: 767px) {
+    #footer-content *{
+        text-align: center !important;
+    }
+}
+
+/*---------------------------------------
+   4.7 MailChimp 
+---------------------------------------*/
+#mailchimp-content{
+    background-color: #fbfbfb;
+}
+
+
+/*---------------------------------------
+=========================================
+   5. COLOR STYLES   
+=========================================           
+-----------------------------------------*/
+
+/*---------------------------------------
+   5.1 Pink
+---------------------------------------*/
+/* title section */
+.pink .section-header .section-header-underline {
+    border-top: solid 1px #ec4863;
+}
+/* service */
+.pink .service .service-icon {
+    border: solid 1px rgb(220, 64, 89);
+    background-color: #ec4863;
+}
+.pink .service .service-icon i{
+    text-shadow: rgb(207, 62, 85) 0px 0px 0px, rgb(207, 62, 85) 1px 1px 0px;
+}
+/* social links */
+.pink .social-links li a i{
+    background-color: #ec4863;
+    text-shadow: rgb(220, 64, 89) 0px 0px 0px, rgb(220, 64, 89) 1px 1px 0px, rgb(220, 64, 89) 1px 2px 0px, rgb(220, 64, 89) 2px 3px 0px, rgb(220, 64, 89) 2px 4px 0px, rgb(220, 64, 89) 3px 4px 0px, rgb(220, 64, 89) 4px 5px 0px, rgb(220, 64, 89) 4px 6px 0px, rgb(220, 64, 89) 5px 7px 0px, rgb(220, 64, 89) 5px 8px 0px, rgb(220, 64, 89) 6px 8px 0px, rgb(220, 64, 89) 6px 9px 0px, rgb(220, 64, 89) 7px 10px 0px, rgb(220, 64, 89) 8px 11px 0px, rgb(220, 64, 89) 8px 12px 0px, rgb(220, 64, 89) 9px 13px 0px, rgb(220, 64, 89) 9px 13px 0px, rgb(220, 64, 89) 10px 14px 0px, rgb(220, 64, 89) 11px 15px 0px, rgb(220, 64, 89) 11px 16px 0px, rgb(220, 64, 89) 12px 17px 0px, rgb(220, 64, 89) 12px 17px 0px, rgb(220, 64, 89) 13px 18px 0px, rgb(220, 64, 89) 13px 19px 0px, rgb(220, 64, 89) 14px 20px 0px, rgb(220, 64, 89) 15px 21px 0px, rgb(220, 64, 89) 15px 21px 0px, rgb(220, 64, 89) 16px 22px 0px, rgb(220, 64, 89) 16px 23px 0px, rgb(220, 64, 89) 17px 24px 0px, rgb(220, 64, 89) 17px 25px 0px, rgb(220, 64, 89) 18px 26px 0px, rgb(220, 64, 89) 19px 26px 0px, rgb(220, 64, 89) 19px 27px 0px, rgb(220, 64, 89) 20px 28px 0px, rgb(220, 64, 89) 20px 29px 0px, rgb(220, 64, 89) 21px 30px 0px, rgb(220, 64, 89) 22px 30px 0px, rgb(220, 64, 89) 22px 31px 0px, rgb(220, 64, 89) 23px 32px 0px, rgb(220, 64, 89) 23px 33px 0px;
+}
+.pink .social-links li a i:hover{
+    background-color: rgb(220, 64, 89);
+}
+/* background video controls */
+.pink .video-controls a{
+    background-color: #ec4863;
+    text-shadow: rgb(220, 64, 89) 0px 0px 0px, rgb(220, 64, 89) 1px 1px 0px, rgb(220, 64, 89) 1px 2px 0px, rgb(220, 64, 89) 2px 3px 0px, rgb(220, 64, 89) 2px 4px 0px, rgb(220, 64, 89) 3px 4px 0px, rgb(220, 64, 89) 4px 5px 0px, rgb(220, 64, 89) 4px 6px 0px, rgb(220, 64, 89) 5px 7px 0px, rgb(220, 64, 89) 5px 8px 0px, rgb(220, 64, 89) 6px 8px 0px, rgb(220, 64, 89) 6px 9px 0px, rgb(220, 64, 89) 7px 10px 0px, rgb(220, 64, 89) 8px 11px 0px, rgb(220, 64, 89) 8px 12px 0px, rgb(220, 64, 89) 9px 13px 0px, rgb(220, 64, 89) 9px 13px 0px, rgb(220, 64, 89) 10px 14px 0px, rgb(220, 64, 89) 11px 15px 0px, rgb(220, 64, 89) 11px 16px 0px, rgb(220, 64, 89) 12px 17px 0px, rgb(220, 64, 89) 12px 17px 0px, rgb(220, 64, 89) 13px 18px 0px, rgb(220, 64, 89) 13px 19px 0px, rgb(220, 64, 89) 14px 20px 0px, rgb(220, 64, 89) 15px 21px 0px, rgb(220, 64, 89) 15px 21px 0px, rgb(220, 64, 89) 16px 22px 0px, rgb(220, 64, 89) 16px 23px 0px, rgb(220, 64, 89) 17px 24px 0px, rgb(220, 64, 89) 17px 25px 0px, rgb(220, 64, 89) 18px 26px 0px, rgb(220, 64, 89) 19px 26px 0px, rgb(220, 64, 89) 19px 27px 0px, rgb(220, 64, 89) 20px 28px 0px, rgb(220, 64, 89) 20px 29px 0px, rgb(220, 64, 89) 21px 30px 0px, rgb(220, 64, 89) 22px 30px 0px, rgb(220, 64, 89) 22px 31px 0px, rgb(220, 64, 89) 23px 32px 0px, rgb(220, 64, 89) 23px 33px 0px;
+}
+.pink .video-controls a:hover{
+    background-color: rgb(220, 64, 89);
+}
+/* contact us form */
+.pink #contact .input-box:focus,
+.pink #contact .textarea-box:focus{
+    border-color: #ec4863;
+}
+.pink #contact .send-btn:hover{
+    background-color: #ec4863;
+    color: white;
+}
+.pink #contact .send-btn:active{
+    background-color: rgb(220, 64, 89);
+    color: white;
+}
+/* copyright heart */
+.pink .heart-color{
+    color: #ec4863;
+}
+/* contacts icon */
+.pink .contacts-icon{
+    color: #ec4863;
+}
+/* header gradient */
+.pink #countdown-content .backstretch:after,
+.pink #countdown-content .vegas-container:after,
+.pink #countdown-content .mbYTP_wrapper::after{
+    background: rgb(255,243,119); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmMzc3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q2Mzk1MSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(45deg,  rgba(255,243,119,1) 0%, rgba(214,57,81,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,243,119,1)), color-stop(100%,rgba(214,57,81,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  rgba(255,243,119,1) 0%,rgba(214,57,81,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  rgba(255,243,119,1) 0%,rgba(214,57,81,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  rgba(255,243,119,1) 0%,rgba(214,57,81,1) 100%); /* IE10+ */
+    background: linear-gradient(45deg,  rgba(255,243,119,1) 0%,rgba(214,57,81,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff377', endColorstr='#d63951',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
+}
+/* mailchimp */
+.pink .mc-form .mc-subscribe{
+    background-color: #ec4863;
+}
+.pink .mc-form .mc-subscribe:hover{
+    background-color: rgb(207, 62, 85)
+}
+
+/*---------------------------------------
+   5.2 Green
+---------------------------------------*/
+/* title section */
+.green .section-header .section-header-underline {
+    border-top: solid 1px #66CC00;
+}
+/* service */
+.green .service .service-icon {
+    border: solid 1px rgb(59, 169, 33);
+    background-color: #66CC00;
+}
+.green .service .service-icon i{
+    text-shadow: rgb(59, 169, 33) 0px 0px 0px, rgb(59, 169, 33) 1px 1px 0px;
+}
+/* social links */
+.green .social-links li a i{
+    background-color: #66CC00;
+    text-shadow: rgb(59, 169, 33) 0px 0px 0px, rgb(59, 169, 33) 1px 1px 0px, rgb(59, 169, 33) 1px 2px 0px, rgb(59, 169, 33) 2px 3px 0px, rgb(59, 169, 33) 2px 4px 0px, rgb(59, 169, 33) 3px 4px 0px, rgb(59, 169, 33) 4px 5px 0px, rgb(59, 169, 33) 4px 6px 0px, rgb(59, 169, 33) 5px 7px 0px, rgb(59, 169, 33) 5px 8px 0px, rgb(59, 169, 33) 6px 8px 0px, rgb(59, 169, 33) 6px 9px 0px, rgb(59, 169, 33) 7px 10px 0px, rgb(59, 169, 33) 8px 11px 0px, rgb(59, 169, 33) 8px 12px 0px, rgb(59, 169, 33) 9px 13px 0px, rgb(59, 169, 33) 9px 13px 0px, rgb(59, 169, 33) 10px 14px 0px, rgb(59, 169, 33) 11px 15px 0px, rgb(59, 169, 33) 11px 16px 0px, rgb(59, 169, 33) 12px 17px 0px, rgb(59, 169, 33) 12px 17px 0px, rgb(59, 169, 33) 13px 18px 0px, rgb(59, 169, 33) 13px 19px 0px, rgb(59, 169, 33) 14px 20px 0px, rgb(59, 169, 33) 15px 21px 0px, rgb(59, 169, 33) 15px 21px 0px, rgb(59, 169, 33) 16px 22px 0px, rgb(59, 169, 33) 16px 23px 0px, rgb(59, 169, 33) 17px 24px 0px, rgb(59, 169, 33) 17px 25px 0px, rgb(59, 169, 33) 18px 26px 0px, rgb(59, 169, 33) 19px 26px 0px, rgb(59, 169, 33) 19px 27px 0px, rgb(59, 169, 33) 20px 28px 0px, rgb(59, 169, 33) 20px 29px 0px, rgb(59, 169, 33) 21px 30px 0px, rgb(59, 169, 33) 22px 30px 0px, rgb(59, 169, 33) 22px 31px 0px, rgb(59, 169, 33) 23px 32px 0px, rgb(59, 169, 33) 23px 33px 0px;
+}
+.green .social-links li a i:hover{
+    background-color: rgb(59, 169, 33);
+}
+/* background video controls */
+.green .video-controls a{
+    background-color: #66CC00;
+    text-shadow: rgb(59, 169, 33) 0px 0px 0px, rgb(59, 169, 33) 1px 1px 0px, rgb(59, 169, 33) 1px 2px 0px, rgb(59, 169, 33) 2px 3px 0px, rgb(59, 169, 33) 2px 4px 0px, rgb(59, 169, 33) 3px 4px 0px, rgb(59, 169, 33) 4px 5px 0px, rgb(59, 169, 33) 4px 6px 0px, rgb(59, 169, 33) 5px 7px 0px, rgb(59, 169, 33) 5px 8px 0px, rgb(59, 169, 33) 6px 8px 0px, rgb(59, 169, 33) 6px 9px 0px, rgb(59, 169, 33) 7px 10px 0px, rgb(59, 169, 33) 8px 11px 0px, rgb(59, 169, 33) 8px 12px 0px, rgb(59, 169, 33) 9px 13px 0px, rgb(59, 169, 33) 9px 13px 0px, rgb(59, 169, 33) 10px 14px 0px, rgb(59, 169, 33) 11px 15px 0px, rgb(59, 169, 33) 11px 16px 0px, rgb(59, 169, 33) 12px 17px 0px, rgb(59, 169, 33) 12px 17px 0px, rgb(59, 169, 33) 13px 18px 0px, rgb(59, 169, 33) 13px 19px 0px, rgb(59, 169, 33) 14px 20px 0px, rgb(59, 169, 33) 15px 21px 0px, rgb(59, 169, 33) 15px 21px 0px, rgb(59, 169, 33) 16px 22px 0px, rgb(59, 169, 33) 16px 23px 0px, rgb(59, 169, 33) 17px 24px 0px, rgb(59, 169, 33) 17px 25px 0px, rgb(59, 169, 33) 18px 26px 0px, rgb(59, 169, 33) 19px 26px 0px, rgb(59, 169, 33) 19px 27px 0px, rgb(59, 169, 33) 20px 28px 0px, rgb(59, 169, 33) 20px 29px 0px, rgb(59, 169, 33) 21px 30px 0px, rgb(59, 169, 33) 22px 30px 0px, rgb(59, 169, 33) 22px 31px 0px, rgb(59, 169, 33) 23px 32px 0px, rgb(59, 169, 33) 23px 33px 0px;
+}
+.green .video-controls a:hover{
+    background-color: rgb(59, 169, 33);
+}
+/* contact us form */
+.green #contact .input-box:focus,
+.green #contact .textarea-box:focus{
+    border-color: #66CC00;
+}
+.green #contact .send-btn:hover{
+    background-color: #66CC00;
+    color: white;
+}
+.green #contact .send-btn:active{
+    background-color: rgb(59, 169, 33);
+    color: white;
+}
+/* copyright heart */
+.green .heart-color{
+    color: #66CC00;
+}
+/* contacts icon */
+.green .contacts-icon{
+    color: #66CC00;
+}
+/* header gradient */
+.green #countdown-content .backstretch:after,
+.green #countdown-content .vegas-container:after,
+.green #countdown-content .mbYTP_wrapper::after{
+    background: rgb(255,243,119); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmMzc3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNmN2EwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(45deg,  rgba(255,243,119,1) 0%, rgba(63,122,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,243,119,1)), color-stop(100%,rgba(63,122,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  rgba(255,243,119,1) 0%,rgba(63,122,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  rgba(255,243,119,1) 0%,rgba(63,122,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  rgba(255,243,119,1) 0%,rgba(63,122,0,1) 100%); /* IE10+ */
+    background: linear-gradient(45deg,  rgba(255,243,119,1) 0%,rgba(63,122,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff377', endColorstr='#3f7a00',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
+}
+/* mailchimp */
+.green .mc-form .mc-subscribe{
+    background-color: #66CC00;
+}
+.green .mc-form .mc-subscribe:hover{
+    background-color: rgb(59, 169, 33)
+}
+
+/*---------------------------------------
+   5.3 Yellow
+---------------------------------------*/
+/* title section */
+.yellow .section-header .section-header-underline {
+    border-top: solid 1px #eede2e;
+}
+/* service */
+.yellow .service .service-icon {
+    border: solid 1px rgb(208, 194, 35);
+    background-color: #eede2e;
+}
+.yellow .service .service-icon i{
+    text-shadow: rgb(208, 194, 35) 0px 0px 0px, rgb(208, 194, 35) 1px 1px 0px;
+}
+/* social links */
+.yellow .social-links li a i{
+    background-color: #eede2e;
+    text-shadow: rgb(208, 194, 35) 0px 0px 0px, rgb(208, 194, 35) 1px 1px 0px, rgb(208, 194, 35) 1px 2px 0px, rgb(208, 194, 35) 2px 3px 0px, rgb(208, 194, 35) 2px 4px 0px, rgb(208, 194, 35) 3px 4px 0px, rgb(208, 194, 35) 4px 5px 0px, rgb(208, 194, 35) 4px 6px 0px, rgb(208, 194, 35) 5px 7px 0px, rgb(208, 194, 35) 5px 8px 0px, rgb(208, 194, 35) 6px 8px 0px, rgb(208, 194, 35) 6px 9px 0px, rgb(208, 194, 35) 7px 10px 0px, rgb(208, 194, 35) 8px 11px 0px, rgb(208, 194, 35) 8px 12px 0px, rgb(208, 194, 35) 9px 13px 0px, rgb(208, 194, 35) 9px 13px 0px, rgb(208, 194, 35) 10px 14px 0px, rgb(208, 194, 35) 11px 15px 0px, rgb(208, 194, 35) 11px 16px 0px, rgb(208, 194, 35) 12px 17px 0px, rgb(208, 194, 35) 12px 17px 0px, rgb(208, 194, 35) 13px 18px 0px, rgb(208, 194, 35) 13px 19px 0px, rgb(208, 194, 35) 14px 20px 0px, rgb(208, 194, 35) 15px 21px 0px, rgb(208, 194, 35) 15px 21px 0px, rgb(208, 194, 35) 16px 22px 0px, rgb(208, 194, 35) 16px 23px 0px, rgb(208, 194, 35) 17px 24px 0px, rgb(208, 194, 35) 17px 25px 0px, rgb(208, 194, 35) 18px 26px 0px, rgb(208, 194, 35) 19px 26px 0px, rgb(208, 194, 35) 19px 27px 0px, rgb(208, 194, 35) 20px 28px 0px, rgb(208, 194, 35) 20px 29px 0px, rgb(208, 194, 35) 21px 30px 0px, rgb(208, 194, 35) 22px 30px 0px, rgb(208, 194, 35) 22px 31px 0px, rgb(208, 194, 35) 23px 32px 0px, rgb(208, 194, 35) 23px 33px 0px;
+}
+.yellow .social-links li a i:hover{
+    background-color: rgb(208, 194, 35);
+}
+/* background video controls */
+.yellow .video-controls a{
+    background-color: #eede2e;
+    text-shadow: rgb(208, 194, 35) 0px 0px 0px, rgb(208, 194, 35) 1px 1px 0px, rgb(208, 194, 35) 1px 2px 0px, rgb(208, 194, 35) 2px 3px 0px, rgb(208, 194, 35) 2px 4px 0px, rgb(208, 194, 35) 3px 4px 0px, rgb(208, 194, 35) 4px 5px 0px, rgb(208, 194, 35) 4px 6px 0px, rgb(208, 194, 35) 5px 7px 0px, rgb(208, 194, 35) 5px 8px 0px, rgb(208, 194, 35) 6px 8px 0px, rgb(208, 194, 35) 6px 9px 0px, rgb(208, 194, 35) 7px 10px 0px, rgb(208, 194, 35) 8px 11px 0px, rgb(208, 194, 35) 8px 12px 0px, rgb(208, 194, 35) 9px 13px 0px, rgb(208, 194, 35) 9px 13px 0px, rgb(208, 194, 35) 10px 14px 0px, rgb(208, 194, 35) 11px 15px 0px, rgb(208, 194, 35) 11px 16px 0px, rgb(208, 194, 35) 12px 17px 0px, rgb(208, 194, 35) 12px 17px 0px, rgb(208, 194, 35) 13px 18px 0px, rgb(208, 194, 35) 13px 19px 0px, rgb(208, 194, 35) 14px 20px 0px, rgb(208, 194, 35) 15px 21px 0px, rgb(208, 194, 35) 15px 21px 0px, rgb(208, 194, 35) 16px 22px 0px, rgb(208, 194, 35) 16px 23px 0px, rgb(208, 194, 35) 17px 24px 0px, rgb(208, 194, 35) 17px 25px 0px, rgb(208, 194, 35) 18px 26px 0px, rgb(208, 194, 35) 19px 26px 0px, rgb(208, 194, 35) 19px 27px 0px, rgb(208, 194, 35) 20px 28px 0px, rgb(208, 194, 35) 20px 29px 0px, rgb(208, 194, 35) 21px 30px 0px, rgb(208, 194, 35) 22px 30px 0px, rgb(208, 194, 35) 22px 31px 0px, rgb(208, 194, 35) 23px 32px 0px, rgb(208, 194, 35) 23px 33px 0px;
+}
+.yellow .video-controls a:hover{
+    background-color: rgb(208, 194, 35);
+}
+/* contact us form */
+.yellow #contact .input-box:focus,
+.yellow #contact .textarea-box:focus{
+    border-color: #eede2e;
+}
+.yellow #contact .send-btn:hover{
+    background-color: #eede2e;
+    color: white;
+}
+.yellow #contact .send-btn:active{
+    background-color: rgb(208, 194, 35);
+    color: white;
+}
+/* copyright heart */
+.yellow .heart-color{
+    color: #eede2e;
+}
+/* contacts icon */
+.yellow .contacts-icon{
+    color: #eede2e;
+}
+/* header gradient */
+.yellow #countdown-content .backstretch:after,
+.yellow #countdown-content .vegas-container:after,
+.yellow #countdown-content .mbYTP_wrapper::after{
+    background: rgb(255,174,140); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZhZThjIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M2YjkyNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(45deg,  rgba(255,174,140,1) 0%, rgba(198,185,39,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,174,140,1)), color-stop(100%,rgba(198,185,39,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  rgba(255,174,140,1) 0%,rgba(198,185,39,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  rgba(255,174,140,1) 0%,rgba(198,185,39,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  rgba(255,174,140,1) 0%,rgba(198,185,39,1) 100%); /* IE10+ */
+    background: linear-gradient(45deg,  rgba(255,174,140,1) 0%,rgba(198,185,39,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae8c', endColorstr='#c6b927',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+/* mailchimp */
+.yellow .mc-form .mc-subscribe{
+    background-color: #eede2e;
+}
+.yellow .mc-form .mc-subscribe:hover{
+    background-color: rgb(208, 194, 35)
+}
+
+/*---------------------------------------
+   5.4 Blue
+---------------------------------------*/
+/* title section */
+.blue .section-header .section-header-underline {
+    border-top: solid 1px #2f7acb;
+}
+/* service */
+.blue .service .service-icon {
+    border: solid 1px rgb(47, 122, 203);
+    background-color: #4196f2;
+}
+.blue .service .service-icon i{
+    text-shadow: rgb(47, 122, 203) 0px 0px 0px, rgb(47, 122, 203) 1px 1px 0px;
+}
+/* social links */
+.blue .social-links li a i{
+    background-color: #4196f2;
+    text-shadow: rgb(47, 122, 203) 0px 0px 0px, rgb(47, 122, 203) 1px 1px 0px, rgb(47, 122, 203) 1px 2px 0px, rgb(47, 122, 203) 2px 3px 0px, rgb(47, 122, 203) 2px 4px 0px, rgb(47, 122, 203) 3px 4px 0px, rgb(47, 122, 203) 4px 5px 0px, rgb(47, 122, 203) 4px 6px 0px, rgb(47, 122, 203) 5px 7px 0px, rgb(47, 122, 203) 5px 8px 0px, rgb(47, 122, 203) 6px 8px 0px, rgb(47, 122, 203) 6px 9px 0px, rgb(47, 122, 203) 7px 10px 0px, rgb(47, 122, 203) 8px 11px 0px, rgb(47, 122, 203) 8px 12px 0px, rgb(47, 122, 203) 9px 13px 0px, rgb(47, 122, 203) 9px 13px 0px, rgb(47, 122, 203) 10px 14px 0px, rgb(47, 122, 203) 11px 15px 0px, rgb(47, 122, 203) 11px 16px 0px, rgb(47, 122, 203) 12px 17px 0px, rgb(47, 122, 203) 12px 17px 0px, rgb(47, 122, 203) 13px 18px 0px, rgb(47, 122, 203) 13px 19px 0px, rgb(47, 122, 203) 14px 20px 0px, rgb(47, 122, 203) 15px 21px 0px, rgb(47, 122, 203) 15px 21px 0px, rgb(47, 122, 203) 16px 22px 0px, rgb(47, 122, 203) 16px 23px 0px, rgb(47, 122, 203) 17px 24px 0px, rgb(47, 122, 203) 17px 25px 0px, rgb(47, 122, 203) 18px 26px 0px, rgb(47, 122, 203) 19px 26px 0px, rgb(47, 122, 203) 19px 27px 0px, rgb(47, 122, 203) 20px 28px 0px, rgb(47, 122, 203) 20px 29px 0px, rgb(47, 122, 203) 21px 30px 0px, rgb(47, 122, 203) 22px 30px 0px, rgb(47, 122, 203) 22px 31px 0px, rgb(47, 122, 203) 23px 32px 0px, rgb(47, 122, 203) 23px 33px 0px;
+}
+.blue .social-links li a i:hover{
+    background-color: rgb(47, 122, 203);
+}
+/* background video controls */
+.blue .video-controls a{
+    background-color: #4196f2;
+    text-shadow: rgb(47, 122, 203) 0px 0px 0px, rgb(47, 122, 203) 1px 1px 0px, rgb(47, 122, 203) 1px 2px 0px, rgb(47, 122, 203) 2px 3px 0px, rgb(47, 122, 203) 2px 4px 0px, rgb(47, 122, 203) 3px 4px 0px, rgb(47, 122, 203) 4px 5px 0px, rgb(47, 122, 203) 4px 6px 0px, rgb(47, 122, 203) 5px 7px 0px, rgb(47, 122, 203) 5px 8px 0px, rgb(47, 122, 203) 6px 8px 0px, rgb(47, 122, 203) 6px 9px 0px, rgb(47, 122, 203) 7px 10px 0px, rgb(47, 122, 203) 8px 11px 0px, rgb(47, 122, 203) 8px 12px 0px, rgb(47, 122, 203) 9px 13px 0px, rgb(47, 122, 203) 9px 13px 0px, rgb(47, 122, 203) 10px 14px 0px, rgb(47, 122, 203) 11px 15px 0px, rgb(47, 122, 203) 11px 16px 0px, rgb(47, 122, 203) 12px 17px 0px, rgb(47, 122, 203) 12px 17px 0px, rgb(47, 122, 203) 13px 18px 0px, rgb(47, 122, 203) 13px 19px 0px, rgb(47, 122, 203) 14px 20px 0px, rgb(47, 122, 203) 15px 21px 0px, rgb(47, 122, 203) 15px 21px 0px, rgb(47, 122, 203) 16px 22px 0px, rgb(47, 122, 203) 16px 23px 0px, rgb(47, 122, 203) 17px 24px 0px, rgb(47, 122, 203) 17px 25px 0px, rgb(47, 122, 203) 18px 26px 0px, rgb(47, 122, 203) 19px 26px 0px, rgb(47, 122, 203) 19px 27px 0px, rgb(47, 122, 203) 20px 28px 0px, rgb(47, 122, 203) 20px 29px 0px, rgb(47, 122, 203) 21px 30px 0px, rgb(47, 122, 203) 22px 30px 0px, rgb(47, 122, 203) 22px 31px 0px, rgb(47, 122, 203) 23px 32px 0px, rgb(47, 122, 203) 23px 33px 0px;
+}
+.blue .video-controls a:hover{
+    background-color: rgb(47, 122, 203);
+}
+/* contact us form */
+.blue #contact .input-box:focus,
+.blue #contact .textarea-box:focus{
+    border-color: #4196f2;
+}
+.blue #contact .send-btn:hover{
+    background-color: #4196f2;
+    color: white;
+}
+.blue #contact .send-btn:active{
+    background-color: rgb(47, 122, 203);
+    color: white;
+}
+/* copyright heart */
+.blue .heart-color{
+    color: #4196f2;
+}
+/* contacts icon */
+.blue .contacts-icon{
+    color: #2f7acb;
+}
+/* header gradient */
+.blue #countdown-content .backstretch:after,
+.blue #countdown-content .vegas-container:after,
+.blue #countdown-content .mbYTP_wrapper::after{
+    background: rgb(255,140,251); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjElIiBzdG9wLWNvbG9yPSIjZmY4Y2ZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFhNjhiYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(45deg,  rgba(255,140,251,1) 1%, rgba(26,104,188,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(1%,rgba(255,140,251,1)), color-stop(100%,rgba(26,104,188,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  rgba(255,140,251,1) 1%,rgba(26,104,188,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  rgba(255,140,251,1) 1%,rgba(26,104,188,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  rgba(255,140,251,1) 1%,rgba(26,104,188,1) 100%); /* IE10+ */
+    background: linear-gradient(45deg,  rgba(255,140,251,1) 1%,rgba(26,104,188,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8cfb', endColorstr='#1a68bc',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
+}
+/* mailchimp */
+.blue .mc-form .mc-subscribe{
+    background-color: #2f7acb;
+}
+.blue .mc-form .mc-subscribe:hover{
+    background-color: rgb(47, 122, 203)
+}
+
+/*---------------------------------------
+   5.5 Violet
+---------------------------------------*/
+/* title section */
+.violet .section-header .section-header-underline {
+    border-top: solid 1px #dd9bed;
+}
+/* service */
+.violet .service .service-icon {
+    border: solid 1px rgb(194, 126, 211);
+    background-color: #dd9bed;
+}
+.violet .service .service-icon i{
+    text-shadow: rgb(194, 126, 211) 0px 0px 0px, rgb(194, 126, 211) 1px 1px 0px;
+}
+/* social links */
+.violet .social-links li a i{
+    background-color: #dd9bed;
+    text-shadow: rgb(194, 126, 211) 0px 0px 0px, rgb(194, 126, 211) 1px 1px 0px, rgb(194, 126, 211) 1px 2px 0px, rgb(194, 126, 211) 2px 3px 0px, rgb(194, 126, 211) 2px 4px 0px, rgb(194, 126, 211) 3px 4px 0px, rgb(194, 126, 211) 4px 5px 0px, rgb(194, 126, 211) 4px 6px 0px, rgb(194, 126, 211) 5px 7px 0px, rgb(194, 126, 211) 5px 8px 0px, rgb(194, 126, 211) 6px 8px 0px, rgb(194, 126, 211) 6px 9px 0px, rgb(194, 126, 211) 7px 10px 0px, rgb(194, 126, 211) 8px 11px 0px, rgb(194, 126, 211) 8px 12px 0px, rgb(194, 126, 211) 9px 13px 0px, rgb(194, 126, 211) 9px 13px 0px, rgb(194, 126, 211) 10px 14px 0px, rgb(194, 126, 211) 11px 15px 0px, rgb(194, 126, 211) 11px 16px 0px, rgb(194, 126, 211) 12px 17px 0px, rgb(194, 126, 211) 12px 17px 0px, rgb(194, 126, 211) 13px 18px 0px, rgb(194, 126, 211) 13px 19px 0px, rgb(194, 126, 211) 14px 20px 0px, rgb(194, 126, 211) 15px 21px 0px, rgb(194, 126, 211) 15px 21px 0px, rgb(194, 126, 211) 16px 22px 0px, rgb(194, 126, 211) 16px 23px 0px, rgb(194, 126, 211) 17px 24px 0px, rgb(194, 126, 211) 17px 25px 0px, rgb(194, 126, 211) 18px 26px 0px, rgb(194, 126, 211) 19px 26px 0px, rgb(194, 126, 211) 19px 27px 0px, rgb(194, 126, 211) 20px 28px 0px, rgb(194, 126, 211) 20px 29px 0px, rgb(194, 126, 211) 21px 30px 0px, rgb(194, 126, 211) 22px 30px 0px, rgb(194, 126, 211) 22px 31px 0px, rgb(194, 126, 211) 23px 32px 0px, rgb(194, 126, 211) 23px 33px 0px;
+}
+.violet .social-links li a i:hover{
+    background-color: rgb(194, 126, 211);
+}
+/* background video controls */
+.violet .video-controls a{
+    background-color: #dd9bed;
+    text-shadow: rgb(194, 126, 211) 0px 0px 0px, rgb(194, 126, 211) 1px 1px 0px, rgb(194, 126, 211) 1px 2px 0px, rgb(194, 126, 211) 2px 3px 0px, rgb(194, 126, 211) 2px 4px 0px, rgb(194, 126, 211) 3px 4px 0px, rgb(194, 126, 211) 4px 5px 0px, rgb(194, 126, 211) 4px 6px 0px, rgb(194, 126, 211) 5px 7px 0px, rgb(194, 126, 211) 5px 8px 0px, rgb(194, 126, 211) 6px 8px 0px, rgb(194, 126, 211) 6px 9px 0px, rgb(194, 126, 211) 7px 10px 0px, rgb(194, 126, 211) 8px 11px 0px, rgb(194, 126, 211) 8px 12px 0px, rgb(194, 126, 211) 9px 13px 0px, rgb(194, 126, 211) 9px 13px 0px, rgb(194, 126, 211) 10px 14px 0px, rgb(194, 126, 211) 11px 15px 0px, rgb(194, 126, 211) 11px 16px 0px, rgb(194, 126, 211) 12px 17px 0px, rgb(194, 126, 211) 12px 17px 0px, rgb(194, 126, 211) 13px 18px 0px, rgb(194, 126, 211) 13px 19px 0px, rgb(194, 126, 211) 14px 20px 0px, rgb(194, 126, 211) 15px 21px 0px, rgb(194, 126, 211) 15px 21px 0px, rgb(194, 126, 211) 16px 22px 0px, rgb(194, 126, 211) 16px 23px 0px, rgb(194, 126, 211) 17px 24px 0px, rgb(194, 126, 211) 17px 25px 0px, rgb(194, 126, 211) 18px 26px 0px, rgb(194, 126, 211) 19px 26px 0px, rgb(194, 126, 211) 19px 27px 0px, rgb(194, 126, 211) 20px 28px 0px, rgb(194, 126, 211) 20px 29px 0px, rgb(194, 126, 211) 21px 30px 0px, rgb(194, 126, 211) 22px 30px 0px, rgb(194, 126, 211) 22px 31px 0px, rgb(194, 126, 211) 23px 32px 0px, rgb(194, 126, 211) 23px 33px 0px;
+}
+.violet .video-controls a:hover{
+    background-color: rgb(194, 126, 211);
+}
+/* contact us form */
+.violet #contact .input-box:focus,
+.violet #contact .textarea-box:focus{
+    border-color: #dd9bed;
+}
+.violet #contact .send-btn:hover{
+    background-color: #dd9bed;
+    color: white;
+}
+.violet #contact .send-btn:active{
+    background-color: rgb(194, 126, 211);
+    color: white;
+}
+/* copyright heart */
+.violet .heart-color{
+    color: #dd9bed;
+}
+/* contacts icon */
+.violet .contacts-icon{
+    color: #dd9bed;
+}
+/* header gradient */
+.violet #countdown-content .backstretch:after,
+.violet #countdown-content .vegas-container:after,
+.violet #countdown-content .mbYTP_wrapper::after{
+    background: rgb(125,185,232); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN2RiOWU4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M5MmZlZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(45deg,  rgba(125,185,232,1) 0%, rgba(201,47,239,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(125,185,232,1)), color-stop(100%,rgba(201,47,239,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  rgba(125,185,232,1) 0%,rgba(201,47,239,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  rgba(125,185,232,1) 0%,rgba(201,47,239,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  rgba(125,185,232,1) 0%,rgba(201,47,239,1) 100%); /* IE10+ */
+    background: linear-gradient(45deg,  rgba(125,185,232,1) 0%,rgba(201,47,239,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#c92fef',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+/* mailchimp */
+.violet .mc-form .mc-subscribe{
+    background-color: #dd9bed;
+}
+.violet .mc-form .mc-subscribe:hover{
+    background-color: rgb(194, 126, 211)
+}
+
+
+/*---------------------------------------
+   5.6 Red
+---------------------------------------*/
+/* title section */
+.red .section-header .section-header-underline {
+    border-top: solid 1px #d82121;
+}
+/* service */
+.red .service .service-icon {
+    border: solid 1px rgb(185, 28, 28);
+    background-color: #d82121;
+}
+.red .service .service-icon i{
+    text-shadow: rgb(185, 28, 28) 0px 0px 0px, rgb(185, 28, 28) 1px 1px 0px;
+}
+/* social links */
+.red .social-links li a i{
+    background-color: #d82121;
+    text-shadow: rgb(185, 28, 28) 0px 0px 0px, rgb(185, 28, 28) 1px 1px 0px, rgb(185, 28, 28) 1px 2px 0px, rgb(185, 28, 28) 2px 3px 0px, rgb(185, 28, 28) 2px 4px 0px, rgb(185, 28, 28) 3px 4px 0px, rgb(185, 28, 28) 4px 5px 0px, rgb(185, 28, 28) 4px 6px 0px, rgb(185, 28, 28) 5px 7px 0px, rgb(185, 28, 28) 5px 8px 0px, rgb(185, 28, 28) 6px 8px 0px, rgb(185, 28, 28) 6px 9px 0px, rgb(185, 28, 28) 7px 10px 0px, rgb(185, 28, 28) 8px 11px 0px, rgb(185, 28, 28) 8px 12px 0px, rgb(185, 28, 28) 9px 13px 0px, rgb(185, 28, 28) 9px 13px 0px, rgb(185, 28, 28) 10px 14px 0px, rgb(185, 28, 28) 11px 15px 0px, rgb(185, 28, 28) 11px 16px 0px, rgb(185, 28, 28) 12px 17px 0px, rgb(185, 28, 28) 12px 17px 0px, rgb(185, 28, 28) 13px 18px 0px, rgb(185, 28, 28) 13px 19px 0px, rgb(185, 28, 28) 14px 20px 0px, rgb(185, 28, 28) 15px 21px 0px, rgb(185, 28, 28) 15px 21px 0px, rgb(185, 28, 28) 16px 22px 0px, rgb(185, 28, 28) 16px 23px 0px, rgb(185, 28, 28) 17px 24px 0px, rgb(185, 28, 28) 17px 25px 0px, rgb(185, 28, 28) 18px 26px 0px, rgb(185, 28, 28) 19px 26px 0px, rgb(185, 28, 28) 19px 27px 0px, rgb(185, 28, 28) 20px 28px 0px, rgb(185, 28, 28) 20px 29px 0px, rgb(185, 28, 28) 21px 30px 0px, rgb(185, 28, 28) 22px 30px 0px, rgb(185, 28, 28) 22px 31px 0px, rgb(185, 28, 28) 23px 32px 0px, rgb(185, 28, 28) 23px 33px 0px;
+}
+.red .social-links li a i:hover{
+    background-color: rgb(185, 28, 28);
+}
+/* background video controls */
+.red .video-controls a{
+    background-color: #d82121;
+    text-shadow: rgb(185, 28, 28) 0px 0px 0px, rgb(185, 28, 28) 1px 1px 0px, rgb(185, 28, 28) 1px 2px 0px, rgb(185, 28, 28) 2px 3px 0px, rgb(185, 28, 28) 2px 4px 0px, rgb(185, 28, 28) 3px 4px 0px, rgb(185, 28, 28) 4px 5px 0px, rgb(185, 28, 28) 4px 6px 0px, rgb(185, 28, 28) 5px 7px 0px, rgb(185, 28, 28) 5px 8px 0px, rgb(185, 28, 28) 6px 8px 0px, rgb(185, 28, 28) 6px 9px 0px, rgb(185, 28, 28) 7px 10px 0px, rgb(185, 28, 28) 8px 11px 0px, rgb(185, 28, 28) 8px 12px 0px, rgb(185, 28, 28) 9px 13px 0px, rgb(185, 28, 28) 9px 13px 0px, rgb(185, 28, 28) 10px 14px 0px, rgb(185, 28, 28) 11px 15px 0px, rgb(185, 28, 28) 11px 16px 0px, rgb(185, 28, 28) 12px 17px 0px, rgb(185, 28, 28) 12px 17px 0px, rgb(185, 28, 28) 13px 18px 0px, rgb(185, 28, 28) 13px 19px 0px, rgb(185, 28, 28) 14px 20px 0px, rgb(185, 28, 28) 15px 21px 0px, rgb(185, 28, 28) 15px 21px 0px, rgb(185, 28, 28) 16px 22px 0px, rgb(185, 28, 28) 16px 23px 0px, rgb(185, 28, 28) 17px 24px 0px, rgb(185, 28, 28) 17px 25px 0px, rgb(185, 28, 28) 18px 26px 0px, rgb(185, 28, 28) 19px 26px 0px, rgb(185, 28, 28) 19px 27px 0px, rgb(185, 28, 28) 20px 28px 0px, rgb(185, 28, 28) 20px 29px 0px, rgb(185, 28, 28) 21px 30px 0px, rgb(185, 28, 28) 22px 30px 0px, rgb(185, 28, 28) 22px 31px 0px, rgb(185, 28, 28) 23px 32px 0px, rgb(185, 28, 28) 23px 33px 0px;
+}
+.red .video-controls a:hover{
+    background-color: rgb(185, 28, 28);
+}
+/* contact us form */
+.red #contact .input-box:focus,
+.red #contact .textarea-box:focus{
+    border-color: #d82121;
+}
+.red #contact .send-btn:hover{
+    background-color: #d82121;
+    color: white;
+}
+.red #contact .send-btn:active{
+    background-color: rgb(185, 28, 28);
+    color: white;
+}
+/* copyright heart */
+.red .heart-color{
+    color: #d82121;
+}
+/* contacts icon */
+.red .contacts-icon{
+    color: #d82121;
+}
+/* header gradient */
+.red #countdown-content .backstretch:after,
+.red #countdown-content .vegas-container:after,
+.red #countdown-content .mbYTP_wrapper::after{
+    background: rgb(255,134,68); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmY4NjQ0IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhjMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(45deg,  rgba(255,134,68,1) 0%, rgba(140,0,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,134,68,1)), color-stop(100%,rgba(140,0,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  rgba(255,134,68,1) 0%,rgba(140,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  rgba(255,134,68,1) 0%,rgba(140,0,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  rgba(255,134,68,1) 0%,rgba(140,0,0,1) 100%); /* IE10+ */
+    background: linear-gradient(45deg,  rgba(255,134,68,1) 0%,rgba(140,0,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8644', endColorstr='#8c0000',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+/* mailchimp */
+.red .mc-form .mc-subscribe{
+    background-color: #d82121;
+}
+.red .mc-form .mc-subscribe:hover{
+    background-color: rgb(185, 28, 28)
+}
