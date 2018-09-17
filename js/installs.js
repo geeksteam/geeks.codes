@@ -2,23 +2,6 @@ $(document).ready(function () {
 
     "use strict";
     
-    /* ---- COUNTDOWN TIMER ---- */
-
-    // this is parameter of "Open Web Site", you can change it
-
-        $('#clock').countDown({
-            targetDate: {
-                'day': 		10,
-                'month': 	6,
-                'year': 	2016,
-                'hour': 	0,
-                'min': 		0,
-                'sec': 		0
-            },
-            omitWeeks: true
-        });
-
-
     /* ---- BACKGROUND IMAGE ---- */
 
     // BACKGROUND IMAGE
@@ -34,10 +17,9 @@ $(document).ready(function () {
     });
 
     /* ---- COMMENTS SLIDER ---- */
-    $("#comments-slider").owlCarousel({
-        items: 4 // Count visible comments in slider
+    $(".owl-carousel").owlCarousel({
+         items: 4 // Count visible comments in slider
     });
-
     /* ---- SCROLLING ---- */
     $('a[href^="#"]').on('click', function () {
         var target = $(this).attr('href');
@@ -79,33 +61,5 @@ $(document).ready(function () {
         return false;
     });
 
-
-    /* ---- BACKGROUND VIDEO ---- */
-    var player = $(".player").YTPlayer();
-    $("#bg-play").on('click', function (event) {
-        player.playYTP();
-    });
-    $("#bg-pause").on('click', function (event) {
-        player.pauseYTP();
-    });
-
-
-    /* ---- INITIALIZE MAILCHIMP ---- */
-    $('#mc-form').ajaxChimp({
-        callback: mailchimpCallback,
-        url: "http://esy.us10.list-manage.com/subscribe/post?u=883b40b20a099fc26055a6c2a&amp;id=0a4f6ed7f9" // Just paste your mailchimp list url inside the "".
-    });
-
-    /* 
-     MAILCHIMP CALLBACK METHOD 
-    */
-    function mailchimpCallback(resp) {
-        if (resp.result === 'success') { // if your submit accepted, you can write script here
-
-        } 
-        else if(resp.result === 'error') { // if something wrong, you can write script here
-
-        }
-    }
 
 });

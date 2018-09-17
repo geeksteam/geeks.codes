@@ -97,7 +97,7 @@ a{
     visibility: hidden;
 }
 .hidden-control{
-    opacity: 0;
+    opacity: 80;
 }
 .visible-preloader{
     opacity: 1;
@@ -374,6 +374,7 @@ h6 {
     display: inline-block;
     text-align: center;
     overflow: hidden;
+    margin: 5px;
 }
 .social-links li a{
     color: white;
@@ -738,7 +739,7 @@ h6 {
     padding-bottom: 40px;
 }
 #footer-content .contact-row .contact{
-    opacity: 0;
+    opacity: 80;
 }
 #footer-content .copyright{
     font-size: 12px;
